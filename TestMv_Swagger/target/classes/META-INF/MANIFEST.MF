@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: DataJpa
+Implementation-Version: 1.0-SNAPSHOT
+Built-By: ManasChaudhary
+Implementation-Vendor-Id: com.edelweiss.lms
+Build-Jdk: 1.8.0_40
+Implementation-URL: http://maven.apache.org
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+

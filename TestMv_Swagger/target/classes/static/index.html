@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Spring Boot Example</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<script
+	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
+<script src="/js/app.js"></script>
+<script src="/js/img-compress.js"></script>
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" />
+	
+	<style type="text/css">
+	.column {
+		float: left;
+		width: 25%;
+	}
+	span.test {
+	text-align: center;
+}
+div.col{
+border-style: outset;
+ border-bottom: 6px solid red;
+    background-color: lightgrey;
+}
+.btn-xl {
+    padding: 0px 20px;
+    font-size: 20px;
+    border-radius: 10px;
+    float: left;
+    margin: 10px 0;
+    padding: 10px;
+    width: 100%;
+}
+	</style>
+	
+</head>
+<body>
+<noscript><h2 style="color: #ff0000">Seems your browser doesn't support Javascript! Please enable Javascript and reload this page!</h2></noscript>
+	<div class="container" ng-app="app">
+		<h1>Movie Database</h1>
+ 
+		<div class="row">
+			<div ng-controller="getAllMovies" class="col-md-3">
+				<h3>All Movies</h3>
+ 
+				<button ng-click="getAllMovies()">Get All Movies</button>
+ 
+				<!-- <div ng-show="showAllMovies">
+					<ul class="list-group" class="col-xs-8">
+						<li ng-repeat="movieDetail in allMovies"><h4 class="list-group-item">
+								<strong>Movie {{$index+1}}</strong><br />
+								Movie Name: {{movieDetail.movieName}}<br />
+								Poster :  <img ng-src="{{movieDetail.poster}}" style="height:{{15}}em; width: {{13}}em" onError="this.src='img/NA.jpg'">
+						</h4></li>
+					</ul>
+				</div> -->
+
+				
+<div class="container">
+    <div class="row" ng-repeat="movieDetail in allMovies"  ng-if="$index % 3 == 0">
+        <div class="col col-md-4">
+        <strong class="test">{{allMovies[$index].movieName}}</strong>
+            <button class="feature-icon btn btn-xl btn-info"><span class="badge"><img ng-src="{{allMovies[$index].poster}}" style="height:{{15}}em; width: {{13}}em" onError="this.src='img/NA.jpg'"> </span></button> 
+        </div>
+        <div class="col col-md-4">
+        <strong class="test">{{allMovies[$index +1].movieName}}</strong>
+            <button class="feature-icon btn btn-xl btn-success"><span class="badge"><img ng-src="{{allMovies[$index+1].poster}}" style="height:{{15}}em; width: {{13}}em" onError="this.src='img/NA.jpg'"></span></button>
+        </div>
+        <div class="col col-md-4">
+        <strong class="test">{{allMovies[$index +2].movieName}}</strong>
+            <button class="feature-icon btn btn-xl btn-warning"><span class="badge"><img ng-src="{{allMovies[$index+2].poster}}" style="height:{{15}}em; width: {{13}}em" onError="this.src='img/NA.jpg'"></span></button>
+        </div>
+    </div>
+</div>
+				
+				<p>{{getResultMessage}}</p>
+			</div>
+ 
+			<!-- <div ng-controller="getAllCat" class="col-md-3">
+				<h3>Customer by ID</h3>
+ 
+				<input type="text" class="form-control" style="width: 100px;"
+					ng-model="customerId" /> <br />
+				<button ng-click="getCustomer()">Get Customer</button>
+ 
+				<div ng-show="showCustomer">
+					Id: {{customer.data.id}}<br />
+					First Name: {{customer.data.firstName}}<br />
+					Last Name: {{customer.data.lastName}}
+				</div>
+				<p>{{getResultMessage}}</p>
+			</div> -->
+ 
+		</div>
+	</div>
+</body>
+</html>
