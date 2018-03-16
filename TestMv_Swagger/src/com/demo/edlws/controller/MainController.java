@@ -62,7 +62,7 @@ public class MainController {
 			System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
 			driver= new ChromeDriver();
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-			driver.get("http://adminconsol.filmysongs.com/Service/CelebrityFashionStreetService.svc/GetALLMovie?MovieType=Bollywood&Language=Hindi&limit=100&Offset="+start);
+			driver.get("SAMPLETESTLINK"+start);
 			
 			//String content = /*driver.findElement(By.xpath("string")).getText();*/ driver.getPageSource().substring(driver.getPageSource().indexOf("[{"));
 			String content= driver.getPageSource();
